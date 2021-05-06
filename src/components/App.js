@@ -1,7 +1,17 @@
+import React from "react";
+import Main from "./main/Main";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
 import "../styles/App.css";
-const baseUrl = "http://www.omdbapi.com";
+
 function App() {
-  return <div className="App">Hello World</div>;
+  return (
+    <div className="app">
+      <Header />
+      <Main />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
