@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Nominations from "./nominations/Nominations";
 import Search from "./search/Search";
 
-const baseUrl = "http://www.omdbapi.com";
+const baseUrl = "https://www.omdbapi.com";
 
 export default function Main() {
   const [movies, setMovies] = useState([]);
