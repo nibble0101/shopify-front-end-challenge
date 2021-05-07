@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 
 export default function Search(props) {
   return (
-    <section>
+    <>
       <SearchBar
         value={props.value}
         submitHandle={props.submitHandle}
@@ -17,6 +17,6 @@ export default function Search(props) {
         error={props.error}
         nominations={props.nominations}
       />
-    </section>
+    </>
   );
 }

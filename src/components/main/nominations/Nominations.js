@@ -1,28 +1,29 @@
 import React from "react";
+import NominatedMovie from "./NominatedMovie";
 
 export default function Nominations(props) {
   const { nominations, removeNomination } = props;
   return (
     <div>
-      <p> Your Nominations </p>
-      {nominations.length === 5 ? (
-        <p className="warning">You have reached nominations limit of 5 movies</p>
-      ) : null}
-      <ul className="nominations">
+      <h2 className="nominations-header"> Your Nominations </h2>
+      <div className="warning-wrapper">
+        {nominations.length === 5 ? (
+          <p className="warning">
+            You have reached nominations limit of 5 movies
+          </p>
+        ) : null}
+      </div>
+      <div className="nominations">
         {nominations.map((movie, index) => {
           return (
-            <li key={movie.imdbID} className="nominations__nominated-movie">
-              {movie.Title}
-              <button
-                className="btn btn--margin-left"
-                onClick={() => removeNomination(index)}
-              >
-                Remove
-              </button>
-            </li>
+            <NominatedMovie
+              key={`${movie.imdbID}_${index}`}
+              removeNomination={removeNomination}
+              movie={movie}
+            />
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 }

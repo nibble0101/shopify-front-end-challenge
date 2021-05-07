@@ -12,15 +12,17 @@ export default function SearchResults(props) {
   }
   return (
     <div className="search-result">
-      <p className="search-result__title">Movie search result</p>
-      {props.movies.map((movie) => (
-        <Movie
-          movie={movie}
-          nominateMovie={props.nominateMovie}
-          key={movie.imdbID}
-          nominations={props.nominations}
-        />
-      ))}
+      <h2 className="search-result__title">Movie search result</h2>
+      <div className="search-result__list">
+        {props.movies.map((movie, index) => (
+          <Movie
+            movie={movie}
+            nominateMovie={props.nominateMovie}
+            key={`${movie.imdbID}_${index}` }
+            nominations={props.nominations}
+          />
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,9 +1,13 @@
 import React from "react";
+import Menu from "./Menu";
 
 export default function Header() {
   return (
-    <header>
-      <h1 className="header">Movie Den</h1>
+    <header className="header">
+      <h1>
+        MOVIE<span className="header__blue-text">DEN</span>
+      </h1>
+      <Menu />
     </header>
   );
 }

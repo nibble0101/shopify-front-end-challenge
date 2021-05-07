@@ -5,11 +5,13 @@ import "../../../styles/Loader.css";
 
 export default function Loader() {
   return (
-    <div className="lds-ellipsis">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className="loading-wrapper">
+      <div className="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 }

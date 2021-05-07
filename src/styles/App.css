@@ -6,7 +6,7 @@
 
 body {
   color: whitesmoke;
-  background-color: gray;
+  background-color: #131720;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -17,17 +17,30 @@ body {
 }
 
 .header {
-  text-align: left;
   font-weight: lighter;
   background-color: #303434;
   padding: 0.5em;
-  text-align: center;
   color: #b1b4ba;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}
+.header__blue-text {
+  font-size: small;
+  color: #a3cfff;
+}
+.menu a {
+  text-decoration: none;
+  color: #b1b4ba;
+  padding: 1em;
 }
 .main {
   min-height: 90vh;
-  display: flex;
-  justify-content: space-around;
   margin: 1em;
 }
 .btn {
@@ -45,6 +58,10 @@ body {
   box-shadow: inset 0 -1px 0 0 #303434;
   transition: all 120ms ease;
 }
+.movie{
+  align-self: center;
+  justify-self: center;
+}
 .movie__title {
   font-size: small;
   max-width: 200px;
@@ -52,29 +69,32 @@ body {
 .movie__release-date {
   font-size: x-small;
 }
-.nominations__nominated-movie {
-    list-style-type: none;
+
+.btn--margin-left {
+  margin-left: 10px;
 }
-.btn--margin-left{
-    margin-left: 10px;
+.nominations {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.nominations{
-    background-color: #303434;
-    padding: 1em;
-    border-radius: 5px;
-    font-size: small;
-    min-height: 300px;
-    min-width: 350px;
+.warning-wrapper {
+  height: 1em;
 }
-.warning{
-    font-size: small;
-    color: #0c0000;
+.warning {
+  color: #9be86b;
+  text-align: center;
 }
-.error{
-    font-size: small;
-    color: #100507;
-    margin: 2em 0;
+.nominations-header{
+  text-align: center;
 }
+.error {
+  
+  color: #9be86b;
+  margin: 2em 0;
+  text-align: center;
+}
+
 .form__text-input {
   width: 200px;
   padding: 10px 15px 10px 15px;
@@ -94,9 +114,16 @@ body {
   height: auto;
   border-radius: 10px;
 }
+.search-result{
+  margin: auto;
+}
+.search-result__list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 .search-result__title {
-  font-size: small;
-  padding: 1em 0;
+  text-align: center;
+  padding: 1em;
 }
 .footer {
   display: flex;
@@ -108,10 +135,9 @@ body {
   color: white;
 }
 @media screen and (max-width: 700px) {
-    .main{
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-       
-    }
+  .main {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
 }

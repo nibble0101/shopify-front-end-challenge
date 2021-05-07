@@ -1,10 +1,9 @@
 import React from "react";
 import ReactStars from "react-rating-stars-component";
 import placeHolderImage from "../../../placeholder-image.jpg";
-import { isMovieNominated } from "../../../utils/utils";
 
-export default function Movie(props) {
-  const { movie, nominateMovie } = props;
+export default function NominatedMovie(props) {
+  const { movie, removeNomination } = props;
   return (
     <div className="movie">
       <div className="movie__image-wrapper">
@@ -18,7 +17,7 @@ export default function Movie(props) {
         <ReactStars
           count={10}
           size={16}
-          value={parseFloat(movie.imdbRating)}
+          value={movie.rating ? parseFloat(movie.rating) : 0}
           color="yellow"
           activeColor="brown"
           edit={true}
@@ -28,20 +27,8 @@ export default function Movie(props) {
       <p className="movie__title">{movie.Title}</p>
       <p className="movie__release-date">{movie.Year}</p>
       <p>
-        <button
-          className="btn"
-          style={
-            isMovieNominated(movie, props.nominations) === true
-              ? { cursor: "not-allowed" }
-              : null
-          }
-          onClick={
-            isMovieNominated(movie, props.nominations) === true
-              ? undefined
-              : () => nominateMovie(movie)
-          }
-        >
-          Nominate
+        <button className="btn" onClick={() => removeNomination(movie)}>
+          Remove
         </button>
       </p>
     </div>
