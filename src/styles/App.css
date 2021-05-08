@@ -57,12 +57,12 @@ body {
   margin: 1em;
 }
 .warning {
-  color: #9be86b;
+  color: #b1b4ba;
   text-align: center;
 }
 
 .error {
-  color: #9be86b;
+  color: #b1b4ba;
   margin: 2em 0;
   text-align: center;
 }
