@@ -4,7 +4,7 @@ import placeHolderImage from "../../../placeholder-image.jpg";
 import { isMovieNominated } from "../../../utils/utils";
 
 export default function Movie(props) {
-  const { movie, nominateMovie } = props;
+  const { movie, nominateMovie, rateMovie } = props;
   return (
     <div className="movie">
       <div className="movie__image-wrapper">
@@ -18,11 +18,12 @@ export default function Movie(props) {
         <ReactStars
           count={10}
           size={16}
-          value={parseFloat(movie.imdbRating)}
+          value={movie.rating}
           color="yellow"
           activeColor="brown"
           edit={true}
           className="rating"
+          onChange={(rating) => rateMovie(movie, rating) }
         />
       </div>
       <p className="movie__title">{movie.Title}</p>

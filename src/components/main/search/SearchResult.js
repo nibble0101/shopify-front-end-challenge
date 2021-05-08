@@ -18,6 +18,7 @@ export default function SearchResults(props) {
           <Movie
             movie={movie}
             nominateMovie={props.nominateMovie}
+            rateMovie={props.rateMovie}
             key={`${movie.imdbID}_${index}` }
             nominations={props.nominations}
           />

@@ -1,4 +1,9 @@
-import { removeNomination } from "../utils/utils";
+import {
+  removeNomination,
+  getItemFromLocalStorage,
+  updateRatingList,
+  rateMovie,
+} from "../utils/utils";
 
 export const SET_MOVIES = "SET_MOVIES";
 export const SET_NOMINATED_MOVIES = "SET_NOMINATED_MOVIES";
@@ -7,6 +12,7 @@ export const SET_VALUE = "SET_VALUE";
 export const SET_QUERY = "SET_QUERY";
 export const SET_FETCHING_INDICATOR = "SET_FETCHING_INDICATOR";
 export const SET_ERROR_INDICATOR = "SET_ERROR_INDICATOR";
+export const SET_MOVIE_RATING = "SET_MOVIE_RATING";
 
 export const initialState = {
   movies: [],
@@ -19,12 +25,12 @@ export const initialState = {
 };
 
 export function initializeState(initialState) {
-  const nominatedMovies = JSON.parse(localStorage.getItem("nominations"));
-  if (nominatedMovies) {
+  const nominatedMovies = getItemFromLocalStorage("nominations");
+  if (nominatedMovies.length) {
     initialState.nominations = nominatedMovies;
   }
-  const starredMovies = JSON.parse(localStorage.getItem("starred"));
-  if (starredMovies) {
+  const starredMovies = getItemFromLocalStorage("starred-movies");
+  if (starredMovies.length) {
     initialState.starredMovies = starredMovies;
   }
   return initialState;
@@ -53,6 +59,18 @@ export function reducer(state, action) {
       return { ...state, isFetchingMovies: action.isFetchingMovies };
     case SET_ERROR_INDICATOR:
       return { ...state, error: { ...action.error } };
+    case SET_MOVIE_RATING:
+      const { movieObject, rating } = action;
+      return {
+        ...state,
+        starredMovies: updateRatingList(
+          state.starredMovies,
+          movieObject,
+          rating
+        ),
+        movies: rateMovie(state.movies, movieObject, rating),
+        nominations: rateMovie(state.nominations, movieObject, rating),
+      };
     default:
       return state;
   }

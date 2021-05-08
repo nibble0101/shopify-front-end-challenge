@@ -12,6 +12,7 @@ export default function Search(props) {
       />
       <SearchResult
         nominateMovie={props.nominateMovie}
+        rateMovie={props.rateMovie}
         isFetchingMovies={props.isFetchingMovies}
         movies={props.movies}
         error={props.error}

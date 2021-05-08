@@ -2,7 +2,7 @@ import React from "react";
 import NominatedMovie from "./NominatedMovie";
 
 export default function Nominations(props) {
-  const { nominations, removeNomination } = props;
+  const { nominations, removeNomination, rateMovie } = props;
   return (
     <div>
       <h2 className="nominations-header"> Your Nominations </h2>
@@ -20,6 +20,7 @@ export default function Nominations(props) {
               key={`${movie.imdbID}_${index}`}
               removeNomination={removeNomination}
               movie={movie}
+              rateMovie={rateMovie}
             />
           );
         })}
