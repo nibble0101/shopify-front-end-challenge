@@ -1,0 +1,23 @@
+.header {
+    font-weight: lighter;
+    background-color: #303434;
+    padding: 0.5em;
+    color: #b1b4ba;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .menu {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+  }
+  .header__blue-text {
+    font-size: small;
+    color: #a3cfff;
+  }
+  .menu a {
+    text-decoration: none;
+    color: #b1b4ba;
+    padding: 1em;
+  }
