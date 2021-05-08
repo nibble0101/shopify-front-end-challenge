@@ -76,6 +76,7 @@ body {
 }
 .search-result {
   margin: auto;
+ 
 }
 .search-result__list {
   display: grid;
