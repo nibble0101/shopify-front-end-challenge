@@ -21,7 +21,7 @@ export default function Menu() {
     <>
       <ul className="menu" ref={menuRef}>
         <li className="menu__item" onClick={handleMenuClick}>
-          <NavLink activeClassName="menu__active-item" to="/">
+          <NavLink activeClassName="menu__active-item" exact={true} to="/">
             Home
           </NavLink>
         </li>

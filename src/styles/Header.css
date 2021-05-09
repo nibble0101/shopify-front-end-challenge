@@ -25,6 +25,9 @@
 .hamburger-menu-icon {
   display: none;
 }
+.menu .menu__active-item{
+  color: yellowgreen;
+}
 @media screen and (max-width: 450px) {
   .hamburger-menu-icon {
     display: block;
