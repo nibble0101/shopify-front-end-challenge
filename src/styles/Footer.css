@@ -7,3 +7,7 @@
     font-size: x-small;
     color: white;
   }
+  .footer__link{
+    color: yellowgreen;
+    text-decoration: none;
+  }

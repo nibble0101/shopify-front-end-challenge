@@ -19,7 +19,7 @@ export default function NominatedMovie(props) {
           size={16}
           value={movie.rating ? parseInt(movie.rating) : 0}
           color="yellow"
-          activeColor="brown"
+          activeColor="#ea8686"
           edit={true}
           className="rating"
           onChange={(rating) => rateMovie(movie, rating)}

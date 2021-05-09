@@ -20,7 +20,7 @@ export default function Movie(props) {
           size={16}
           value={movie.rating}
           color="yellow"
-          activeColor="brown"
+          activeColor="#ea8686"
           edit={true}
           className="rating"
           onChange={(rating) => rateMovie(movie, rating) }
