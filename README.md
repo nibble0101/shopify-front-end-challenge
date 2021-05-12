@@ -1,6 +1,6 @@
 # Movie Rating App
 
-[![Github actions CI](https://github.com/nibble0101/shopify-front-end-challenge/actions/workflows/build.yaml/badge.svg?event=check_run)](https://github.com/nibble0101/shopify-front-end-challenge/actions/workflows/build.yaml)
+[![Github actions CI](https://github.com/nibble0101/shopify-front-end-challenge/actions/workflows/build.yaml/badge.svg)](https://github.com/nibble0101/shopify-front-end-challenge/actions/workflows/build.yaml)
 
 Shopify Front-end Intern challenge 2021.
 
