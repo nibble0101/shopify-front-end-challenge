@@ -29,5 +29,5 @@ jobs:
     - name: Production build
       run: |
          echo "Running build"
-         npm build
+         npm run build
          echo "Finished running build"
