@@ -26,7 +26,7 @@ jobs:
          echo "Installing dependencies"
          npm ci
          echo "Finished installing dependencies"
-     - name: Production build
+    - name: Production build
       run: |
          echo "Running build"
          npm build
