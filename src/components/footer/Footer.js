@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <footer className="footer">
       <p>
-        &copy; Movie Den 2021. By{" "}
+        <span>&copy; Movie Den 2021. By{" "}</span>
         <a href="https://github.com/nibble0101" className="footer__link">
-          Jospeh Mawa
+          Joseph Mawa
         </a>
       </p>
     </footer>
