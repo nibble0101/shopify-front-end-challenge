@@ -25,7 +25,7 @@ const baseUrl = "https://www.omdbapi.com";
 
 export default function Main() {
   const [state, dispatch] = useReducer(reducer, initialState, initializeState);
-  console.log(process.env.REACT_APP_API_KEY);
+
   function submitHandle(event) {
     event.preventDefault();
     if (state.value.trim().length < 3) {
