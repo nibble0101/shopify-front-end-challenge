@@ -14,23 +14,38 @@ const handler = async (event) => {
         }),
       };
     }
+
     const url = `${baseUrl}/?apikey=${process.env.REACT_APP_API_KEY}&type=movie&s=${query}&page=1`;
-    const response = (await axios.get(url)).data;
-    if (response.hasOwnProperty("Error")) {
+    const { status, data } = await axios.get(url);
+
+    if (status !== 200) {
       return {
         statusCode: 500,
-        body: JSON.stringify(response),
+        body: JSON.stringify({
+          Response: "False",
+          Error: "Failed to fetch movie",
+        }),
+      };
+    }
+
+    if (data.hasOwnProperty("Error")) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify(data),
       };
     }
 
     return {
       statusCode: 200,
-      body: JSON.stringify(response),
+      body: JSON.stringify(data),
     };
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ Response: "False", Error: "Internal server error" }),
+      body: JSON.stringify({
+        Response: "False",
+        Error: "Internal server error",
+      }),
     };
   }
 };
