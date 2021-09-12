@@ -21,7 +21,7 @@ import {
   initializeState,
 } from "../../reducer/reducer";
 
-const baseUrl = "https://www.omdbapi.com";
+// const baseUrl = "https://www.omdbapi.com";
 
 export default function Main() {
   const [state, dispatch] = useReducer(reducer, initialState, initializeState);
@@ -72,7 +72,7 @@ export default function Main() {
     if (!state.query.trim()) {
       return;
     }
-    const url = `${baseUrl}/?apikey=${process.env.REACT_APP_API_KEY}&type=movie&s=${state.query}&page=1`;
+    const url = `/.netlify/functions/movies?query=${state.query}`;
     async function fetchMovies() {
       try {
         dispatch({ type: SET_FETCHING_INDICATOR, isFetchingMovies: true });
